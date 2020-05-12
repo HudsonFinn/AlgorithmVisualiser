@@ -6,16 +6,16 @@ async function mergeSort(arrayToSort) {
 
 async function TopDownSplitMerge(workingArray, iBegin, iEnd, arrayToSort) {
   if (iEnd - iBegin < 2) return;
+  await sleep(100);
   var iMiddle = Math.floor((iEnd + iBegin) / 2);
   await TopDownSplitMerge(arrayToSort, iBegin, iMiddle, workingArray);
   await TopDownSplitMerge(arrayToSort, iMiddle, iEnd, workingArray);
   await TopDownMerge(workingArray, iBegin, iMiddle, iEnd, arrayToSort);
   mergeSortColour(arrayToSort, 'mergeSort');
   mergeSortColour(workingArray, 'mergeSortOriginal');
-  await sleep(500);
 }
 
-async function TopDownMerge(arrayToSort, iBegin, iMiddle, iEnd, workingArray) {
+async function TopDownMerge(workingArray, iBegin, iMiddle, iEnd, arrayToSort) {
   i = iBegin;
   j = iMiddle;
   for (k = iBegin; k < iEnd; k++) {
@@ -26,10 +26,10 @@ async function TopDownMerge(arrayToSort, iBegin, iMiddle, iEnd, workingArray) {
       workingArray[k] = arrayToSort[j];
       j = j + 1;
     }
+    await sleep(200);
 
     mergeSortColour(arrayToSort, 'mergeSort');
     mergeSortColour(workingArray, 'mergeSortOriginal');
-    await sleep(500);
   }
 
 }

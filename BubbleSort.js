@@ -10,11 +10,13 @@ async function bubbleSort(list, canvas) {
     for (var i = 0; i < lastSortedLen - 1; i++) {
       comparisons += 1;
       if (list[i] > list[i + 1]) {
+        await sleep(100);
         swaps += 1;
         tempLastSortedLen = i + 1;
         let baseIndex = list[i];
         list[i] = list[i + 1];
         list[i + 1] = baseIndex;
+        await sleep(100);
       }
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -31,8 +33,6 @@ async function bubbleSort(list, canvas) {
           ctx.fillRect(j * 20, 0, 10, list[j]);
         }
       }
-
-      await sleep(500);
     }
 
     lastSortedLen = tempLastSortedLen;

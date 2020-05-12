@@ -5,6 +5,7 @@ async function selectionSort(list, canvas) {
     let highestIndex = 0;
     for (var j = i; j < list.length; j++) {
       if (list[j] <= min) {
+        await sleep(100);
         highestIndex = j;
         min = list[j];
       }

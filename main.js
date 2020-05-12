@@ -10,6 +10,8 @@ function main() {
   semiSortedList = bubbleSort(unsortedList, canvas);
   var forthUnsortedList = [...secondUnsortedList];
   selectionSort(forthUnsortedList);
+  var fifthUnsortedList = [...secondUnsortedList];
+  insertionSort(fifthUnsortedList);
 }
 
 function createUnsortedList(len) {

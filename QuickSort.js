@@ -7,6 +7,7 @@ async function lomutoQuickSortWrapper(list, lo, hi) {
 
 async function lomutoQuickSort(list, lo, hi) {
   if (lo < hi) {
+    await sleep(100);
     let p = await partition(list, lo, hi);
     list = await lomutoQuickSort(list, lo, p - 1);
     list = await lomutoQuickSort(list, p + 1, hi);
@@ -22,22 +23,23 @@ async function partition(list, lo, hi) {
   var i = lo;
   for (var j = lo; j < hi; j++) {
     if (list[j] < pivot) {
+      await sleep(100);
       let baseIndex = list[i];
       list[i] = list[j];
       list[j] = baseIndex;
       i += 1;
+      await sleep(100);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       await quickSortColour(ctx, hi, lo, list, i, j);
-      await sleep(500);
     }
   }
 
   let baseIndex = list[i];
   list[i] = list[hi];
   list[hi] = baseIndex;
+  await sleep(100);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   await quickSortColour(ctx, hi, lo, list, i, j);
-  await sleep(500);
   return i;
 }
 
