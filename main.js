@@ -1,15 +1,15 @@
 function main() {
-  var unsortedList = createUnsortedList(10);
+  var unsortedList = createUnsortedList(15);
   console.log(unsortedList);
   var secondUnsortedList = [...unsortedList];
-  MergeSort(secondUnsortedList);
+  mergeSort(secondUnsortedList);
   var thirdUnsortedList = [...secondUnsortedList];
   console.log(thirdUnsortedList);
   lomutoQuickSortWrapper(thirdUnsortedList, 0, thirdUnsortedList.length - 1);
   var canvas = document.getElementById('myCanvas');
   semiSortedList = bubbleSort(unsortedList, canvas);
-
-
+  var forthUnsortedList = [...secondUnsortedList];
+  selectionSort(forthUnsortedList);
 }
 
 function createUnsortedList(len) {
