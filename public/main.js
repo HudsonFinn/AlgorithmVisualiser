@@ -48,6 +48,16 @@ function setup() {
   loadAllScript();
 }
 
+function refreshLists() {
+  if (running == false) {
+    var min = parseInt(document.getElementById("minRange").value);
+    var max = parseInt(document.getElementById("maxRange").value);
+    var length = parseInt(document.getElementById("lengthRange").value);
+    createUnsortedList(length, min, max);
+    drawAllLists();
+  }
+}
+
 function drawAllLists() {
   drawList('bubbleSort');
   drawList('quickSort');
