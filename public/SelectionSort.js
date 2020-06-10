@@ -1,17 +1,16 @@
-async function selectionSort(list, canvas) {
+async function selectionSort(list, delay) {
   console.log(list);
   for (var i = 0; i < list.length; i++) {
     let min = 100000000;
     let highestIndex = 0;
     for (var j = i; j < list.length; j++) {
       if (list[j] <= min) {
-        await sleep(100);
+        await checkStates();
         highestIndex = j;
         min = list[j];
       }
-
+      await checkStates();
       selectionSortColour(list, i, j);
-      await sleep(100);
     }
 
     let swap = list[i];
@@ -19,23 +18,9 @@ async function selectionSort(list, canvas) {
     list[highestIndex] = swap;
   }
 
-  /*
-  for (var j = 0; j < list.length; j++) {
-    if (j == i | j == i + 1) {
-      ctx.fillStyle = '#FFa500';
-      ctx.fillRect(j * 20, 0, 10, list[j]);
-    } else if (j >= lastSortedLen) {
-      ctx.fillStyle = '#00FF00';
-      ctx.fillRect(j * 20, 0, 10, list[j]);
-    } else {
-      ctx.fillStyle = '#FF0000';
-      ctx.fillRect(j * 20, 0, 10, list[j]);
-    }
-  }
-*/
   var canvas = document.getElementById('selectionSort');
   var ctx = canvas.getContext('2d');
-  finnishedCanvasRecolour(ctx, list);
+  await finnishedCanvasRecolour(ctx, list);
   /*
   console.log('Comparsions: ' + comparisons);
   console.log('Swaps: ' + swaps);
@@ -46,17 +31,19 @@ async function selectionSort(list, canvas) {
 async function selectionSortColour(list, i, j) {
   var canvas = document.getElementById('selectionSort');
   var ctx = canvas.getContext('2d');
+  var width = canvas.width;
+  width = (width - list.length)/list.length;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (var k = 0; k < list.length; k++) {
-    if (k <= i) {
+    if (k < i) {
       ctx.fillStyle = '#00FF00';
-      ctx.fillRect(k * 20, 0, 10, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]);
     } else if (k == j) {
       ctx.fillStyle = '#FFa500';
-      ctx.fillRect(k * 20, 0, 10, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]);
     } else {
       ctx.fillStyle = '#FF0000';
-      ctx.fillRect(k * 20, 0, 10, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]);
     }
   }
 }

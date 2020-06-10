@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type = "text/javascript" src = "main.js"></script>
+  <title>Document</title>
+  <style>
+    @import url('./style.css');
+    @import url('./card.css');
+  </style>
+</head>
+<body onload = 'setup()'>
+  <section class="animated-grid">
+    <div class="card">
+      Bubble Sort
+      <canvas id="bubbleSort" width="auto" height="auto">
+        Your browser does not support the canvas element.
+      </canvas>
+    </div>
+    <div class="card">
+      Quick Sort
+      <canvas id="quickSort" width="auto" height="auto">
+        Your browser does not support the canvas element
+      </canvas>
+    </div>
+    <div class="card">
+      Merge Sort
+      <canvas id="mergeSort" width="auto" height="auto">
+        Your browser does not support the canvas element
+      </canvas>
+    </div>
+    <div class="card">
+      Heap sort
+      <canvas id="heapSort" width="auto" height="auto">
+        Your browser does not support the canvas element
+      </canvas>
+    </div>
+    <div class="card">
+      Selection Sort
+      <canvas id="selectionSort" width="auto" height="auto">
+        Your browser does not support the canvas element
+      </canvas>
+    </div>
+    <div class="card">
+      Insertion Sort
+      <canvas id="insertionSort" width="auto" height="auto">
+        Your browser does not support the canvas element
+      </canvas>
+    </div>
+    <div class="card">
+      Shell Sort
+      <canvas id="shellSort" width="auto" height="auto">
+        Your browser does not support the canvas element
+      </canvas>
+    </div>
+    <div class="card">
+      Count Sort
+      <canvas id="countSort" width="auto" height="auto">
+        Your browser does not support the canvas element
+      </canvas>
+    </div>
+    <div class="card">
+      <div class="mainCard">
+        <div class="left">
+          <p> Number of elements </p>
+          <input type="range" min="5" max="100" value="50" class="slider" id="lengthRange" oninput="setup()" onchange="setup()">
+          <p> Element min </p>
+          <input type="range" min="1" max="100" value="1" class="slider" id="minRange" oninput="setup()" onchange="setup()">
+        </div>
+        <div class= "left">
+          <p> Element max </p>
+          <input type="range" min="1" max="100" value="50" class="slider" id="maxRange" oninput="setup()" onchange="setup()">
+          <p> Operation delay </p>
+          <input type="range" min="0" max="100" value="10" class="slider" id="delayRange" oninput="changeDelay()" onchange="changeDelay()">
+        </div>
+        <div class="controlButtons">
+          <button onclick="main()">Start</button>
+          <button onclick="stop()">Stop</button>
+          <button onclick="pause()">Pause</button>
+          <button onclick="resume()">Resume</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

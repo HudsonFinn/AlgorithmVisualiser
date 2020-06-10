@@ -1,14 +1,13 @@
 async function insertionSort(list) {
-  console.log(list);
   for (var i = 0; i < list.length; i++) {
     for (var j = i; j > 0; j--) {
       if (list[j] < list[j - 1]) {
-        await sleep(100);
+        await checkStates();
         let swap = list[j];
         list[j] = list[j - 1];
         list[j - 1] = swap;
         insertionSortColour(list, i, j);
-        await sleep(100);
+        await checkStates();
       }
 
     }
@@ -17,28 +16,26 @@ async function insertionSort(list) {
 
   var canvas = document.getElementById('insertionSort');
   var ctx = canvas.getContext('2d');
-  finnishedCanvasRecolour(ctx, list);
-  /*
-  console.log('Comparsions: ' + comparisons);
-  console.log('Swaps: ' + swaps);
-  return list;
-  */
+  await finnishedCanvasRecolour(ctx, list);
 }
+
 
 async function insertionSortColour(list, i, j) {
   var canvas = document.getElementById('insertionSort');
   var ctx = canvas.getContext('2d');
+  var width = canvas.width;
+  width = (width - list.length)/list.length;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (var k = 0; k < list.length; k++) {
-    if (k == j) {
+    if (k == j-1) {
       ctx.fillStyle = '#FFa500';
-      ctx.fillRect(k * 20, 0, 10, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]);
     } else if (k <= i) {
       ctx.fillStyle = '#00FF00';
-      ctx.fillRect(k * 20, 0, 10, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]);
     } else {
       ctx.fillStyle = '#FF0000';
-      ctx.fillRect(k * 20, 0, 10, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]);
     }
   }
 }

@@ -6,12 +6,12 @@
 
   /* Explicit grid */
   grid-template-areas:
-   'a b c d'
-   'j m m e'
-   'i h g f';
+   'a a b b c c'
+   'h i i i i d'
+   'g g f f e e';
 
    grid-template-rows: repeat(3, 33%);
-   grid-template-columns: repeat(4, 24%);
+   grid-template-columns: ;
 
    --stagger-delay: 100ms;
 }
@@ -68,6 +68,6 @@
   animation-delay: calc(8 * var(--stagger-delay));
 }
 .card:last-child {
-  grid-area: m;
+  grid-area: i;
   animation-delay: calc(9 * var(--stagger-delay));
 }
