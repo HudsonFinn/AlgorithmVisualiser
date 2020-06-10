@@ -2,9 +2,11 @@ var unsortedList;
 var delay;
 var running;
 var paused;
-function main() {
+async function main() {
   console.log(delay);
   console.log(unsortedList);
+  running = false;
+  await sleep(10);
   running = true;
   paused = false;
   var secondUnsortedList = [...unsortedList];
