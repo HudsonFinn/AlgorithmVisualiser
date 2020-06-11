@@ -11,10 +11,12 @@
   <script src="/__/firebase/7.12.0/firebase-database.js"></script>
   <script src="/__/firebase/7.12.0/firebase-functions.js"></script>
   <script type = "text/javascript" src = "main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Document</title>
   <style>
     @import url('./style.css');
     @import url('./card.css');
+    @import url('./playButton.css');
   </style>
 </head>
 <body onload = 'setup()'>
@@ -82,10 +84,16 @@
           <input type="range" min="0" max="100" value="10" class="slider" id="delayRange" oninput="changeDelay()" onchange="changeDelay()">
         </div>
         <div class="controlButtons">
-          <button onclick="main()">Start</button>
+          <button onclick="playPause()">Start</button>
           <button onclick="stop()">Stop</button>
-          <button onclick="pause()">Pause</button>
-          <button onclick="resume()">Resume</button>
+          <svg version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+            <path class="stroke-solid" fill="none" stroke="#ddbe72"  d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7C97.3,23.7,75.7,2.3,49.9,2.5"/>
+            <path class="icon" fill="#ddbe72" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z"/>
+          </svg>
+          <div class="btn play">
+		        <span class="bar bar-1"></span>
+		        <span class="bar bar-2"></span>
+	        </div>
         </div>
       </div>
     </div>

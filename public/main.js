@@ -88,20 +88,23 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function resume() {
-  paused = false;
-}
-
 function stop() {
   running = false;
 }
 
-function pause() {
-  paused = true;
+function playPause() {
+  if (running != true) {
+    main();
+  } else {
+    if (paused == false) {
+      paused = true;
+    } else {
+      paused = false;
+    }
+  }
 }
 
 async function checkStates() {
-  console.log("checkedStates")
   await checkPause();
   checkEnd();
   delay = parseInt(document.getElementById("delayRange").value);
@@ -109,7 +112,6 @@ async function checkStates() {
 }
 
 async function checkPause() {
-  console.log("checkedPause")
   checkEnd();
   if (paused == true) {
     await sleep(1);
@@ -118,7 +120,6 @@ async function checkPause() {
 }
 
 function checkEnd() {
-  console.log("CheckedEnd")
   if (running == false) {
     throw "UserStoppedRun";
   }
@@ -169,3 +170,15 @@ async function finnishedCanvasRecolour(ctx, list) {
   }
 
 }
+
+$('body').on('click', '.btn', function(e){
+  console.log("clicked");
+	e.preventDefault();
+	if ( $(this).hasClass('play') ) {
+		$(this).removeClass('play');
+		$(this).addClass('pause');
+	} else {
+		$(this).removeClass('pause');
+		$(this).addClass('play');
+	}
+});
