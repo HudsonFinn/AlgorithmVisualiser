@@ -2,6 +2,7 @@ var unsortedList;
 var delay;
 var running;
 var paused;
+var openWindow;
 async function main() {
   console.log(delay);
   console.log(unsortedList);
@@ -45,11 +46,12 @@ function setup() {
   var length = parseInt(document.getElementById("lengthRange").value);
   createUnsortedList(length, min, max);
   drawAllLists();
-  loadAllScript();
+  loadAllSort();
+  dynamicallyLoadScript('PageSelection.js')
 }
 
 function refreshLists() {
-  if (running == false) {
+  if (running != true) {
     var min = parseInt(document.getElementById("minRange").value);
     var max = parseInt(document.getElementById("maxRange").value);
     var length = parseInt(document.getElementById("lengthRange").value);
@@ -69,7 +71,7 @@ function drawAllLists() {
   drawList('countSort');
 }
 
-function loadAllScript() {
+function loadAllSort() {
   dynamicallyLoadScript("BubbleSort.js");
   dynamicallyLoadScript("QuickSort.js");
   dynamicallyLoadScript("MergeSort.js");
@@ -88,27 +90,37 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function stop() {
+async function stop() {
   running = false;
+  document.getElementById('startBtn').src='start.png';
+  await sleep(10);
+  refreshLists();
 }
 
 function playPause() {
   if (running != true) {
+    document.getElementById('startBtn').src='pause.png';
     main();
   } else {
     if (paused == false) {
       paused = true;
+      document.getElementById('startBtn').src='start.png';
     } else {
       paused = false;
+      document.getElementById('startBtn').src='pause.png';
     }
   }
 }
 
 async function checkStates() {
   await checkPause();
-  checkEnd();
   delay = parseInt(document.getElementById("delayRange").value);
   await sleep(delay);
+}
+
+async function checkPauseEnd() {
+  await checkPause();
+  checkEnd();
 }
 
 async function checkPause() {
@@ -158,27 +170,17 @@ async function finnishedCanvasRecolour(ctx, list) {
   var width = ctx.canvas.width;
   width = (width - list.length)/list.length;
   for (var j = 0; j < list.length; j++) {
+    await checkPauseEnd();
     ctx.fillStyle = '#FFa500';
     ctx.fillRect(j * (width + 1), 0, width, list[j]);
     await sleep(1000/list.length);
   }
 
   for (var j = 0; j < list.length; j++) {
+    await checkPauseEnd();
     ctx.fillStyle = '#00FF00';
     ctx.fillRect(j * (width + 1), 0, width, list[j]);
     await sleep(1000/list.length);
   }
 
 }
-
-$('body').on('click', '.btn', function(e){
-  console.log("clicked");
-	e.preventDefault();
-	if ( $(this).hasClass('play') ) {
-		$(this).removeClass('play');
-		$(this).addClass('pause');
-	} else {
-		$(this).removeClass('pause');
-		$(this).addClass('play');
-	}
-});

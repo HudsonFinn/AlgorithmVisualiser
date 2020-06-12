@@ -21,12 +21,10 @@ async function selectionSort(list, delay) {
   var canvas = document.getElementById('selectionSort');
   var ctx = canvas.getContext('2d');
   await finnishedCanvasRecolour(ctx, list);
-  /*
-  console.log('Comparsions: ' + comparisons);
-  console.log('Swaps: ' + swaps);
-  return list;
-  */
-}
+  running = false;
+  document.getElementById('startBtn').src='start.png';
+  console.log("finnished");
+  }
 
 async function selectionSortColour(list, i, j) {
   var canvas = document.getElementById('selectionSort');

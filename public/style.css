@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 .animated-grid {
   height: 95vh;
 
@@ -30,6 +34,12 @@
 }
 
 .card {
+  background-color: rgb(36, 243, 147);
+  animation: cardEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
+}
+
+.window {
   background-color: rgb(36, 243, 147);
   animation: cardEntrance 700ms ease-out;
   animation-fill-mode: backwards;
