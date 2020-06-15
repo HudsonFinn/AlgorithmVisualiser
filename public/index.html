@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169226040-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169226040-1');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,6 +34,11 @@
       <canvas id="bubbleSort" width="auto" height="auto">
         Your browser does not support the canvas element.
       </canvas>
+      <p> Performance: </br>
+        Best: O(n) Average: O(n&sup2;) Worst: O(n&sup2;)</br>
+        Memory: O(1)
+      </p>
+
     </div>
     <div class="card">
       Quick Sort

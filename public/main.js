@@ -103,11 +103,11 @@ function playPause() {
     main();
   } else {
     if (paused == false) {
-      paused = true;
       document.getElementById('startBtn').src='start.png';
+      paused = true;
     } else {
-      paused = false;
       document.getElementById('startBtn').src='pause.png';
+      paused = false;
     }
   }
 }
