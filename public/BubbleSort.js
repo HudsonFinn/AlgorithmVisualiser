@@ -8,6 +8,9 @@ async function bubbleSort(list, delay) {
   ctx.fillStyle = '#FF0000';
   var width = canvas.width;
   width = (width - list.length)/list.length;
+	var height = ctx.canvas.height;
+	var maxVal = Math.max.apply(Math, list);
+	height = height/maxVal;
   do {
     tempLastSortedLen = 0;
     for (var i = 0; i < lastSortedLen - 1; i++) {
@@ -27,13 +30,13 @@ async function bubbleSort(list, delay) {
       for (var j = 0; j < list.length; j++) {
         if (j == i | j == i + 1) {
           ctx.fillStyle = '#FFa500';
-          ctx.fillRect(j * (width + 1), 0, width, list[j]);
+          ctx.fillRect(j * (width + 1), 0, width, list[j]*height);
         } else if (j >= lastSortedLen) {
           ctx.fillStyle = '#00FF00';
-          ctx.fillRect(j * (width + 1), 0, width, list[j]);
+          ctx.fillRect(j * (width + 1), 0, width, list[j]*height);
         } else {
           ctx.fillStyle = '#FF0000';
-          ctx.fillRect(j * (width + 1), 0, width, list[j]);
+          ctx.fillRect(j * (width + 1), 0, width, list[j]*height);
         }
       }
     }

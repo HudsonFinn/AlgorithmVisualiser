@@ -39,12 +39,15 @@ async function mergeSortColour(list, list2, canvas) {
   var canvas = document.getElementById(canvas);
   var width = canvas.width;
   width = (width - list.length)/list.length;
+	var height = canvas.height;
+	var maxVal = Math.max.apply(Math, list);
+	height = height/maxVal;
   var ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (var k = 0; k < list.length; k++) {
     ctx.fillStyle = "rgba(0, 155, 0, 1)";
-    ctx.fillRect(k * (width + 1), 0, width, list[k]);
+    ctx.fillRect(k * (width + 1), 0, width, list[k]*height);
     ctx.fillStyle = "rgba(0, 255, 0, 1)";
-    ctx.fillRect(k * (width + 1), 0, width, list2[k])
+    ctx.fillRect(k * (width + 1), 0, width, list2[k]*height)
   }
 }

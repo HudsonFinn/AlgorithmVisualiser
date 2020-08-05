@@ -46,17 +46,20 @@ async function partition(list, lo, hi, delay) {
 async function quickSortColour(canvas, hi, lo, list, i, j) {
   var width = canvas.width;
   width = (width - list.length)/list.length;
+	var height = canvas.height;
+	var maxVal = Math.max.apply(Math, list);
+	height = height/maxVal;
   ctx = canvas.getContext('2d');
   for (var k = 0; k < list.length; k++) {
     if ((k > hi) | (k < lo)) {
       ctx.fillStyle = '#00FF00';
-      ctx.fillRect(k * (width + 1), 0, width, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]*height);
     } else if ((k == i) | (k == j)) {
       ctx.fillStyle = '#FFa500';
-      ctx.fillRect(k * (width + 1), 0, width, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]*height);
     } else {
       ctx.fillStyle = '#FF0000';
-      ctx.fillRect(k * (width + 1), 0, width, list[k]);
+      ctx.fillRect(k * (width + 1), 0, width, list[k]*height);
     }
   }
 }

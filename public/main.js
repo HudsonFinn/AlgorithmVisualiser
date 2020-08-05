@@ -93,7 +93,7 @@ function sleep(ms) {
 async function stop() {
   running = false;
   document.getElementById('startBtn').src='start.png';
-  await sleep(10);
+  await sleep(20);
   refreshLists();
 }
 
@@ -158,28 +158,34 @@ function drawList(canvas) {
   var ctx = canvas.getContext('2d');
   var width = canvas.width;
   width = (width - unsortedList.length)/unsortedList.length;
+	var height = canvas.height;
+	var maxVal = Math.max.apply(Math, unsortedList);
+	height = height/maxVal;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (var k = 0; k < unsortedList.length; k++) {
       ctx.fillStyle = getRandomColour();
-      ctx.fillRect(k * (width + 1), 0, width, unsortedList[k]);
+      ctx.fillRect(k * (width + 1), 0, width, unsortedList[k]*height);
   }
 }
 
 async function finnishedCanvasRecolour(ctx, list) {
   // TODO: ClearRect
   var width = ctx.canvas.width;
+	var height = ctx.canvas.height;
+	var maxVal = Math.max.apply(Math, list);
+	height = height/maxVal;
   width = (width - list.length)/list.length;
   for (var j = 0; j < list.length; j++) {
     await checkPauseEnd();
     ctx.fillStyle = '#FFa500';
-    ctx.fillRect(j * (width + 1), 0, width, list[j]);
+    ctx.fillRect(j * (width + 1), 0, width, list[j]*height);
     await sleep(1000/list.length);
   }
 
   for (var j = 0; j < list.length; j++) {
     await checkPauseEnd();
     ctx.fillStyle = '#00FF00';
-    ctx.fillRect(j * (width + 1), 0, width, list[j]);
+    ctx.fillRect(j * (width + 1), 0, width, list[j]*height);
     await sleep(1000/list.length);
   }
 
