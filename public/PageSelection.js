@@ -16,13 +16,20 @@ something.onclick = function() {
     left.setAttribute('class', 'right')
     var text = document.createElement('h3');
     text.textContent = "Bubble Sort";
-    left.appendChild(text);
+		var creditText = document.createElement('p');
+		creditText.textContent = "Credit: HackerRank youtube channel, https://www.youtube.com/c/HackerrankOfficial/featured"
+		creditText.style.fontSize = "1rem"
+		left.innerHTML = `<iframe style="overflow:hidden;width:90%;height:40%"src="https://www.youtube.com/embed/6Gv8vg0kcHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    left.prepend(text);
+		left.appendChild(creditText);
+
+		var closeDiv = document.createElement('div');
     var closeBtn = document.createElement("IMG");
     closeBtn.setAttribute("src", "start.png");
     closeBtn.setAttribute("width", "40");
     closeBtn.setAttribute("height", "40");
     closeBtn.setAttribute("onclick", "closeWindow()");
-    left.appendChild(closeBtn);
+    closeDiv.appendChild(closeBtn);
     var right = document.createElement('div');
     right.setAttribute('class', 'right')
     var infoText = document.createElement('h3');
@@ -30,6 +37,7 @@ something.onclick = function() {
     right.appendChild(infoText);
     infoWindow.appendChild(left);
     infoWindow.appendChild(right);
+		infoWindow.appendChild(closeDiv);
     BubbleParentDiv.appendChild(infoWindow);
     document.body.appendChild(BubbleParentDiv);
   } else {

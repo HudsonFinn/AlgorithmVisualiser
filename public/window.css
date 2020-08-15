@@ -4,8 +4,31 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.99;  /* for demo purpose  */
-  z-index: 9;
-  margin-top: 2.5%;
+  opacity: 0.99;
+	z-index: 9;
+  top: 5%;
   margin-left: 5%;
+	bottom: 5%;
+	margin-right: 5%;
 }
+
+.window {
+    display: flex;
+    justify-content: center;
+    background: #353535;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 90%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+    padding-left: 5%;
+		padding-right: 5%;
+		top: 5%;
+		bottom: 5%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }

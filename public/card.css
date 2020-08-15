@@ -26,23 +26,6 @@ body {
     background-repeat: no-repeat;
  }
 
-.window {
-    display: flex;
-    justify-content: center;
-    background: #353535;
-    font-size: 3rem;
-    color: #fff;
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-    height: 85%;
-    width: 90%;
-    border-radius: 4px;
-    transition: all 500ms;
-    overflow: hidden;
-    padding: 5%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
- }
 
  .mainCard {
    width:80%;
@@ -54,13 +37,18 @@ body {
  }
 
  .right {
-   width: 50%;
+   width: 45%;
    float: left;
  }
 
  .controlButtons {
    width: 20%;
    float: left;
+ }
+
+ .exitButton {
+	 width: 10%;
+	 float: left;
  }
 
  .slider {
