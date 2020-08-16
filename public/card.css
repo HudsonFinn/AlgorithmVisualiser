@@ -37,8 +37,10 @@ body {
  }
 
  .right {
-   width: 45%;
+   width: 42.5%;
    float: left;
+	 padding-right: 2.5%;
+	 padding-left: 2.5%;
  }
 
  .controlButtons {
@@ -47,7 +49,8 @@ body {
  }
 
  .exitButton {
-	 width: 10%;
+	 width: 5%;
+	 margin-top: 5%;
 	 float: left;
  }
 

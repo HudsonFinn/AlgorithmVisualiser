@@ -24,11 +24,16 @@
   border-radius: 4px;
   transition: all 500ms;
   overflow: hidden;
-  padding-left: 5%;
-	padding-right: 5%;
+  padding-left: 2.5%;
+	padding-right: 2.5%;
 	top: 5%;
 	bottom: 5%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.window h6 {
+	margin-block-end: 1em;
+	margin-block-start: 1em;
 }
