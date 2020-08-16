@@ -28,7 +28,7 @@
 </head>
 <body onload = 'setup()'>
   <section class="animated-grid">
-    <div id="bubbleCard" class="card">
+    <div id="bubbleCard" class="card" onClick="cardClick('BubbleSort')">
       Bubble Sort
       <canvas id="bubbleSort" width="auto" height="auto">
         Your browser does not support the canvas element.
@@ -39,19 +39,19 @@
       </p>
 
     </div>
-    <div class="card">
+    <div id="quickCard" class="card" onClick="cardClick('QuickSort')">
       Quick Sort
       <canvas id="quickSort" width="auto" height="auto">
         Your browser does not support the canvas element
       </canvas>
     </div>
-    <div class="card">
+    <div id="mergeCard" class="card" onClick="cardClick('MergeSort')">
       Merge Sort
       <canvas id="mergeSort" width="auto" height="auto">
         Your browser does not support the canvas element
       </canvas>
     </div>
-    <div class="card">
+    <div id="heapCard" class="card">
       Heap sort
       <canvas id="heapSort" width="auto" height="auto">
         Your browser does not support the canvas element
@@ -98,6 +98,7 @@
         <div class="controlButtons">
           <img id="startBtn" src="start.png" alt="Start" width="40" height="40" onclick="playPause()">
           <img id="stopBtn" src="stop.png" alt="Stop" width="40" height="40" onclick="stop()">
+					<p> Click on an algorithm for more information! </p>
         </div>
       </div>
     </div>

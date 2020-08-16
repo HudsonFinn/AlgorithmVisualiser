@@ -2,7 +2,7 @@ var unsortedList;
 var delay;
 var running;
 var paused;
-var openWindow;
+var openWindow = "";
 async function main() {
   console.log(delay);
   console.log(unsortedList);
@@ -25,6 +25,7 @@ async function main() {
   countSort(seventhUnsortedList);
   var eigthUnsortedList = [...secondUnsortedList];
   heapSort(eigthUnsortedList);
+
 }
 
 function createUnsortedList(len, min, max) {
@@ -80,6 +81,7 @@ function loadAllSort() {
   dynamicallyLoadScript("InsertionSort.js");
   dynamicallyLoadScript("ShellSort.js");
   dynamicallyLoadScript("CountSort.js");
+  dynamicallyLoadScript("algoData.js");
 }
 
 function getRndInt(min, max) {
