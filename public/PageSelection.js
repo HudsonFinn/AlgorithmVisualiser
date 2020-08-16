@@ -54,7 +54,7 @@ function cardClick(clicked) {
 		var closeDiv = document.createElement('div');
 		closeDiv.setAttribute('class', 'exitButton');
     var closeBtn = document.createElement("IMG");
-    closeBtn.setAttribute("src", "close.PNG");
+    closeBtn.setAttribute("src", "close.png");
     closeBtn.setAttribute("width", "40");
     closeBtn.setAttribute("height", "40");
     closeBtn.setAttribute("onclick", "closeWindow()");
