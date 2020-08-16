@@ -32,9 +32,30 @@ something.onclick = function() {
     closeDiv.appendChild(closeBtn);
     var right = document.createElement('div');
     right.setAttribute('class', 'right')
-    var infoText = document.createElement('h3');
-    infoText.textContent = "Information";
-    right.appendChild(infoText);
+    var infoTitle = document.createElement('h3');
+    infoTitle.textContent = "Information";
+    right.appendChild(infoTitle);
+    var aboutSubTitle = document.createElement('h6');
+    aboutSubTitle.textContent = "About";
+    right.appendChild(aboutSubTitle);
+		var aboutContent = document.createElement('p');
+		aboutContent.textContent = "A comparison based very simple sorting algorithm."
+		aboutContent.style.fontSize = "1rem"
+		right.appendChild(aboutContent);
+    var prosSubTitle = document.createElement('h6');
+    prosSubTitle.textContent = "Pros";
+    right.appendChild(prosSubTitle);
+		var proContent = document.createElement('p');
+		proContent.textContent = "Very simple to implement and understand";
+		proContent.style.fontSize = "1rem"
+		right.appendChild(proContent);
+    var consSubTitle = document.createElement('h6');
+    consSubTitle.textContent = "Cons";
+    right.appendChild(consSubTitle);
+		var conContent = document.createElement('p');
+		conContent.textContent = "Has n^2 complexity";
+		conContent.style.fontSize = "1rem"
+		right.appendChild(conContent);
     infoWindow.appendChild(left);
     infoWindow.appendChild(right);
 		infoWindow.appendChild(closeDiv);
