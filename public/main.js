@@ -73,14 +73,14 @@ function drawAllLists() {
 }
 
 function loadAllSort() {
-  dynamicallyLoadScript("BubbleSort.js");
-  dynamicallyLoadScript("QuickSort.js");
-  dynamicallyLoadScript("MergeSort.js");
-  dynamicallyLoadScript("HeapSort.js");
-  dynamicallyLoadScript("SelectionSort.js");
-  dynamicallyLoadScript("InsertionSort.js");
-  dynamicallyLoadScript("ShellSort.js");
-  dynamicallyLoadScript("CountSort.js");
+  dynamicallyLoadScript("./algos/BubbleSort.js");
+  dynamicallyLoadScript("./algos/QuickSort.js");
+  dynamicallyLoadScript("./algos/MergeSort.js");
+  dynamicallyLoadScript("./algos/HeapSort.js");
+  dynamicallyLoadScript("./algos/SelectionSort.js");
+  dynamicallyLoadScript("./algos/InsertionSort.js");
+  dynamicallyLoadScript("./algos/ShellSort.js");
+  dynamicallyLoadScript("./algos/CountSort.js");
   dynamicallyLoadScript("algoData.js");
 }
 
@@ -94,21 +94,21 @@ function sleep(ms) {
 
 async function stop() {
   running = false;
-  document.getElementById('startBtn').src='start.png';
+  document.getElementById('startBtn').src='./media/start.png';
   await sleep(20);
   refreshLists();
 }
 
 function playPause() {
   if (running != true) {
-    document.getElementById('startBtn').src='pause.png';
+    document.getElementById('startBtn').src='./media/pause.png';
     main();
   } else {
     if (paused == false) {
-      document.getElementById('startBtn').src='start.png';
+      document.getElementById('startBtn').src='./media/start.png';
       paused = true;
     } else {
-      document.getElementById('startBtn').src='pause.png';
+      document.getElementById('startBtn').src='/media/pause.png';
       paused = false;
     }
   }

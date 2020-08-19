@@ -21,9 +21,9 @@
   <script type = "text/javascript" src = "main.js"></script>
   <title>Visualiser</title>
   <style>
-    @import url('./style.css');
-    @import url('./card.css');
-    @import url('./window.css');
+    @import url('./css/style.css');
+    @import url('./css/card.css');
+    @import url('./css/window.css');
   </style>
 </head>
 <body onload = 'setup()'>
@@ -91,8 +91,8 @@
           <input type="range" min="0" max="100" value="10" class="slider" id="delayRange" oninput="changeDelay()" onchange="changeDelay()">
         </div>
         <div class="controlButtons">
-          <img id="startBtn" src="start.png" alt="Start" width="40" height="40" onclick="playPause()">
-          <img id="stopBtn" src="stop.png" alt="Stop" width="40" height="40" onclick="stop()">
+          <img id="startBtn" src="./media/start.png" alt="Start" width="40" height="40" onclick="playPause()">
+          <img id="stopBtn" src="./media/stop.png" alt="Stop" width="40" height="40" onclick="stop()">
 					<p> Click on an algorithm for more information! </p>
         </div>
       </div>

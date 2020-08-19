@@ -22,7 +22,7 @@ async function selectionSort(list, delay) {
   var ctx = canvas.getContext('2d');
   await finnishedCanvasRecolour(ctx, list);
   running = false;
-  document.getElementById('startBtn').src='start.png';
+  document.getElementById('startBtn').src='./media/start.png';
   console.log("finnished");
   }
 
