@@ -15,7 +15,7 @@ var algos = {
 				worst : "½ n&sup2;",
 				space : "1"
 			},
-			use : "Has very little real world usage, generally insertion sort should be used instead as it is faster in most cases. It does have uses in teaching algorithms as it is one of the most simple algorithms."
+			use : "Has very little real world usage, generally insertion sort should be used instead as it is faster in most cases. It does have uses in teaching algorithms as it is one of the simplest algorithms to implement."
 		}
 	},
 	"MergeSort" : {

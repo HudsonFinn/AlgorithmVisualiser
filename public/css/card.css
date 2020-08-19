@@ -41,6 +41,15 @@ body {
    float: left;
 	 padding-right: 2.5%;
 	 padding-left: 2.5%;
+
+ }
+
+ .vertical {
+	 width: 90%;
+	 height: 50%;
+	 float:left;
+	 padding-right: 2.5%;
+	 padding-left: 2.5%;
  }
 
  .controlButtons {
@@ -50,8 +59,9 @@ body {
 
  .exitButton {
 	 width: 5%;
+	 height: 45%;
 	 margin-top: 5%;
-	 float: left;
+	 float: right;
  }
 
  .slider {

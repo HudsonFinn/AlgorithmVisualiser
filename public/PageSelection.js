@@ -3,17 +3,22 @@ var cards = document.getElementsByClassName('card');
 function cardClick(clicked) {
   if (openWindow == "") {
 		openWindow = clicked;
+		var width = document.documentElement.clientWidth;
+		var height = document.documentElement.clientHeight;
+		console.log("Your screen width is " + width + " and your height is " + height);
     var BubbleParentDiv = document.createElement('div');
     BubbleParentDiv.setAttribute('class', 'box stack-top');
     BubbleParentDiv.setAttribute('id', 'window');
     console.log("created Window");
 
     var infoWindow = document.createElement('div');
-    infoWindow.setAttribute('class', 'window');
+    infoWindow.setAttribute('class', 'window info');
 
     var left = document.createElement('div');
-		left.style.borderRight = "0.5px solid grey";
     left.setAttribute('class', 'right')
+		if (height >= width) {
+			left.setAttribute('class', 'vertical')
+		}
 		left.style.overflow = "auto"
     var text = document.createElement('h3');
     text.textContent = algos[openWindow].name;
@@ -27,6 +32,9 @@ function cardClick(clicked) {
     var right = document.createElement('div');
     right.setAttribute('class', 'right');
 		right.style.overflow = 'auto';
+		if (height >= width) {
+			right.setAttribute('class', 'vertical')
+		}
     var infoTitle = document.createElement('h3');
     infoTitle.textContent = "Information";
     right.appendChild(infoTitle);
@@ -92,8 +100,8 @@ function cardClick(clicked) {
     closeDiv.appendChild(closeBtn);
 
     infoWindow.appendChild(left);
-    infoWindow.appendChild(right);
 		infoWindow.appendChild(closeDiv);
+    infoWindow.appendChild(right);
     BubbleParentDiv.appendChild(infoWindow);
     document.body.appendChild(BubbleParentDiv);
   } else {
