@@ -66,9 +66,17 @@ var algos = {
 			credit : "https://www.youtube.com/c/MichaelSambol/featured"
 		},
 		info : {
-			about : "A comparison based very simple sorting algorithm.",
-			pros : " - Very simple to implement and understand. \r\n - For already sorted lists it will only make O(n)",
-			cons: "Where n is the number of elements in the list. Bubble sort will compare n² item both in an average case and also in worst case."
+			about : "A sorting algorithms which uses the heap data-structure to sort a list.",
+			properties : {
+				inPlace : "✓",
+				stable : "X",
+				best : "n*",
+				average : "2 n ln n",
+				worst : "2 n lg n",
+				space : "1"
+			},
+			use : "Heap sort is the basis for the proprity queue which is used in many algorithms such as djikstras and others.",
+			disclaimer : "* n lg n if all keys are distinct"
 		}
 	},
 	"SelectionSort" : {
@@ -78,9 +86,17 @@ var algos = {
 			credit : "https://www.youtube.com/c/MichaelSambol/featured"
 		},
 		info : {
-			about : "A comparison based very simple sorting algorithm.",
-			pros : " - Very simple to implement and understand. \r\n - For already sorted lists it will only make O(n)",
-			cons: "Where n is the number of elements in the list. Bubble sort will compare n² item both in an average case and also in worst case."
+			about : "A comparison based sorting algorithm which finds the highest/lowest value in the list and moves it to the end until the list is sorted.",
+			properties : {
+				inPlace : "✓",
+				stable : "X",
+				best : "½ n&sup2;",
+				average : "½ n&sup2;",
+				worst : "½ n&sup2;",
+				space : "1"
+			},
+			use : "Selection sort only ever does a maximum of n swaps because of this it uses very little temporary memory space so if that is limited it is useful. However, it has best case quadratic time complexity so it is slower than most other algorithms.",
+			disclaimer : ""
 		}
 	},
 	"InsertionSort" : {
@@ -90,9 +106,17 @@ var algos = {
 			credit : "https://www.youtube.com/c/MichaelSambol/featured"
 		},
 		info : {
-			about : "A comparison based very simple sorting algorithm.",
-			pros : " - Very simple to implement and understand. \r\n - For already sorted lists it will only make O(n)",
-			cons: "Where n is the number of elements in the list. Bubble sort will compare n² item both in an average case and also in worst case."
+			about : "A comparison based sorting algorithm which selects values and places them in the correct place in a 'sorted' part of the list.",
+			properties : {
+				inPlace : "✓",
+				stable : "✓",
+				best : "n",
+				average : "¼ n 2",
+				worst : "½ n&sup2;",
+				space : "1"
+			},
+			use : "For larger lists insertion sort has very little use. However it is very fast for partially sorted lists so is often used in combination with merge or quicksort to sort smaller partially sorted parts of lists. It is also one of the fastest algorithms which is both in-place and stable.",
+			disclaimer : ""
 		}
 	},
 	"ShellSort" : {
@@ -102,9 +126,17 @@ var algos = {
 			credit : "https://www.youtube.com/c/GeeksforGeeksVideos/featured"
 		},
 		info : {
-			about : "A comparison based very simple sorting algorithm.",
-			pros : " - Very simple to implement and understand. \r\n - For already sorted lists it will only make O(n)",
-			cons: "Where n is the number of elements in the list. Bubble sort will compare n² item both in an average case and also in worst case."
+			about : "An in-place comparison sort which involves swapping far away pairs of elements and gradually reducing the the space between the elements with each pass.",
+			properties : {
+				inPlace : "✓",
+				stable : "X",
+				best : "n log<sub>3</sub> n",
+				average : "n lg n",
+				worst : "c n <sup>3/2</sup>",
+				space : "1"
+			},
+			use : "Has great uses in combination with with insertion sort. You use shell sort first then insertion sort to sort the partially sorted list. It also recurses very few times compared to other algorithms so if the call stack is limited it is also useful.",
+			disclaimer : ""
 		}
 	},
 	"CountSort" : {
@@ -114,9 +146,17 @@ var algos = {
 			credit : "https://www.youtube.com/c/GeeksforGeeksVideos/featured"
 		},
 		info : {
-			about : "A comparison based very simple sorting algorithm.",
-			pros : " - Very simple to implement and understand. \r\n - For already sorted lists it will only make O(n)",
-			cons: "Where n is the number of elements in the list. Bubble sort will compare n² item both in an average case and also in worst case."
+			about : "Count sort works by counting the number of objects with distinct key values. It then calculates the positions of these objects and places them back into the array. k = number of distinct keys. \r\n",
+			properties : {
+				inPlace : "✓",
+				stable : "X",
+				best : "n + k",
+				average : "n + k",
+				worst : "n + k",
+				space : "n + k *"
+			},
+			use : "Has great uses in combination with with insertion sort. You use shell sort first then insertion sort to sort the partially sorted list. It also recurses very few times compared to other algorithms so if the call stack is limited it is also useful. However there are many unique possible values then the space and time requirements become very large",
+			disclaimer : " *Depending on implementation can be k or n + k"
 		}
 	}
 }
