@@ -14,6 +14,7 @@ function cardClick(clicked) {
     var left = document.createElement('div');
 		left.style.borderRight = "0.5px solid grey";
     left.setAttribute('class', 'right')
+		left.style.overflow = "auto"
     var text = document.createElement('h3');
     text.textContent = algos[openWindow].name;
 		var creditText = document.createElement('p');
@@ -24,7 +25,8 @@ function cardClick(clicked) {
 		left.appendChild(creditText);
 
     var right = document.createElement('div');
-    right.setAttribute('class', 'right')
+    right.setAttribute('class', 'right');
+		right.style.overflow = 'auto';
     var infoTitle = document.createElement('h3');
     infoTitle.textContent = "Information";
     right.appendChild(infoTitle);
