@@ -73,11 +73,6 @@ function cardClick(clicked) {
 			</tbody>
 			</table>`;
 		right.append(propertiesContentDiv);
-		// var propertiesContent = document.createElement('p');
-		// propertiesContent.setAttribute('style', 'white-space: pre;');
-		// propertiesContent.textContent = algos[openWindow].info.properties;
-		// propertiesContent.style.fontSize = "1rem"
-		// right.appendChild(propertiesContent);
     var usesSubTitle = document.createElement('h6');
     usesSubTitle.textContent = "Use case";
     right.appendChild(usesSubTitle);
@@ -99,9 +94,15 @@ function cardClick(clicked) {
     closeBtn.setAttribute("onclick", "closeWindow()");
     closeDiv.appendChild(closeBtn);
 
-    infoWindow.appendChild(left);
-		infoWindow.appendChild(closeDiv);
-    infoWindow.appendChild(right);
+		if (height >= width) {
+	    infoWindow.appendChild(left);
+			infoWindow.appendChild(closeDiv);
+	    infoWindow.appendChild(right);
+		} else {
+	    infoWindow.appendChild(left);
+	    infoWindow.appendChild(right);
+			infoWindow.appendChild(closeDiv);
+		}
     BubbleParentDiv.appendChild(infoWindow);
     document.body.appendChild(BubbleParentDiv);
   } else {
