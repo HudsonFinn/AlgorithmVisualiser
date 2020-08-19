@@ -44,6 +44,26 @@
 	font-size: 0.3em;
 }
 
+::-webkit-scrollbar {
+	margin-top: 0px;
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #353435;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .window .tg {
 	border-collapse:collapse;
 	border-spacing:0;
