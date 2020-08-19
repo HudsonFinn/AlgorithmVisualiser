@@ -95,7 +95,7 @@ function sleep(ms) {
 async function stop() {
   running = false;
   document.getElementById('startBtn').src='./media/start.png';
-  await sleep(20);
+  await sleep(100);
   refreshLists();
 }
 
