@@ -6,4 +6,4 @@ and gives some more information on them including their time and space complexit
 The main page allows you to control the contents of the sorted lists and start the visualisation.
 ![Main Screen](./public/media/Homepage.JPG?raw=true "Title")
 Algorithms Running
-![Main Screen](./public/media/Running sort.JPG?raw=true "Title")
+![Running Screen](./public/media/RunningSort.JPG?raw=true "Title")
