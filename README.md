@@ -10,4 +10,4 @@ and gives some more information on them including their time and space complexit
 ### Algorithms Running
 ![Running Screen](./public/media/RunningSort.JPG?raw=true)
 ### More Info Window
-![More Info Screen](./public/media/RunningSort.JPG?raw=true)
+![More Info Screen](./public/media/MoreInfo.JPG?raw=true)
