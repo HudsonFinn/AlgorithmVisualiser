@@ -100,15 +100,23 @@ async function stop() {
 }
 
 function playPause() {
+	console.log("Paused: " + paused);
+	console.log("Running: " + running);
   if (running != true) {
     document.getElementById('startBtn').src='./media/pause.png';
+    document.getElementById('webpStartBtn').srcset='./media/pause.webp';
+    document.getElementById('pngStartBtn').srcset='./media/pause.png';
     main();
   } else {
     if (paused == false) {
-      document.getElementById('startBtn').src='./media/start.png';
+	    document.getElementById('startBtn').src='./media/start.png';
+	    document.getElementById('webpStartBtn').srcset='./media/start.webp';
+	    document.getElementById('pngStartBtn').srcset='./media/start.png';
       paused = true;
     } else {
       document.getElementById('startBtn').src='/media/pause.png';
+	    document.getElementById('webpStartBtn').srcset='./media/pause.webp';
+	    document.getElementById('pngStartBtn').srcset='./media/pause.png';
       paused = false;
     }
   }

@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-169226040-1');
   </script>
   <meta charset="UTF-8">
@@ -15,9 +14,6 @@
   <script src="/__/firebase/7.12.0/firebase-app.js"></script>
   <script src="/__/firebase/7.12.0/firebase-analytics.js"></script>
   <script src="/__/firebase/init.js"></script>
-  <script src="/__/firebase/7.12.0/firebase-auth.js"></script>
-  <script src="/__/firebase/7.12.0/firebase-database.js"></script>
-  <script src="/__/firebase/7.12.0/firebase-functions.js"></script>
   <script type = "text/javascript" src = "main.js"></script>
   <title>Visualiser</title>
   <style>
@@ -79,20 +75,28 @@
     <div class="card">
       <div class="mainCard">
         <div class="left">
-          <p> Number of elements </p>
-          <input type="range" min="5" max="100" value="50" class="slider" id="lengthRange" oninput="refreshLists()" onchange="refreshLists()">
-          <p> Element min </p>
+					<label for="lengthRange"> <p> Number of elements </p> </label>
+					<input type="range" min="5" max="100" value="50" class="slider" id="lengthRange" oninput="refreshLists()" onchange="refreshLists()">
+					<label for="minRange"> <p> Element min </p> </label>
           <input type="range" min="1" max="100" value="1" class="slider" id="minRange" oninput="refreshLists()" onchange="refreshLists()">
         </div>
         <div class= "left">
-          <p> Element max </p>
-          <input type="range" min="1" max="100" value="50" class="slider" id="maxRange" oninput="refreshLists()" onchange="refreshLists()">
-          <p> Operation delay </p>
-          <input type="range" min="0" max="100" value="10" class="slider" id="delayRange" oninput="changeDelay()" onchange="changeDelay()">
+					<label for="maxRange"> <p> Element max </p> </label>
+          <input type="range" lable="Maximum element vlaue slider" min="1" max="100" value="50" class="slider" id="maxRange" oninput="refreshLists()" onchange="refreshLists()">
+          <label for="delayRange"><p> Operation delay </p> </label>
+          <input type="range" label="The delay between each operation in ms" min="0" max="100" value="10" class="slider" id="delayRange" oninput="changeDelay()" onchange="changeDelay()">
         </div>
         <div class="controlButtons">
-          <img id="startBtn" src="./media/start.png" alt="Start" width="40" height="40" onclick="playPause()">
-          <img id="stopBtn" src="./media/stop.png" alt="Stop" width="40" height="40" onclick="stop()">
+					<picture id="startBtnContainer" alt="Start" width="40" height="40" onclick="playPause()">
+						<source id="webpStartBtn" type="image/webp" srcset="./media/start.webp">
+						<source id="pngStartBtn" type="image/png" srcset="./media/start.png">
+     		    <img id="startBtn" src="./media/start.png" alt="Start" width="40" height="40">
+					</picture>
+					<picture id="stopBtn" alt="Stop" width="40" height="40" onclick="stop()">
+						<source type="image/webp" srcset="./media/stop.webp">
+						<source type="image/png" srcset="./media/stop.png">
+          	<img id="stopBtn" src="./media/stop.png" alt="Stop" width="40" height="40" onclick="stop()">
+					</picture>
 					<p> Click on an algorithm for more information! </p>
         </div>
       </div>
