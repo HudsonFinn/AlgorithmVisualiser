@@ -95,6 +95,8 @@ function sleep(ms) {
 async function stop() {
   running = false;
   document.getElementById('startBtn').src='./media/start.png';
+  document.getElementById('webpStartBtn').srcset='./media/start.webp';
+  document.getElementById('pngStartBtn').srcset='./media/start.png';
   await sleep(100);
   refreshLists();
 }
